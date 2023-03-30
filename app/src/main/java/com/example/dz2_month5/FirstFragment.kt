@@ -44,6 +44,8 @@ class FirstFragment : Fragment() {
                                 R.id.secondFragment,
                                 bundleOf("result" to response.body())
                             )
+                            etFirstName.text.clear()
+                            etSecondName.text.clear()
                         }
                     }
 
