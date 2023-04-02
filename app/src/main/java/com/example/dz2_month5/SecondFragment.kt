@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.dz2_month5.databinding.FragmentSecondBinding
+import com.example.dz2_month5.remote.LoveModel
 
 class SecondFragment : Fragment() {
 

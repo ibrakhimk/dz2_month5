@@ -1,4 +1,4 @@
-package com.example.dz2_month5
+package com.example.dz2_month5.remote
 
 import retrofit2.http.GET
 import retrofit2.http.Header
