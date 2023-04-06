@@ -1,4 +1,4 @@
-package com.example.dz2_month5
+package com.example.dz2_month5.ui.result
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.dz2_month5.databinding.FragmentSecondBinding
 import com.example.dz2_month5.remote.LoveModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding

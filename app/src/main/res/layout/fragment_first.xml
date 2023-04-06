@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".FirstFragment">
+    tools:context=".ui.calculate.FirstFragment">
 
     <ImageView
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
-        android:text="@string/love_calculator"
+        android:text="Love Calculator"
         android:textColor="@color/blue"
         android:textSize="32sp"
         android:textStyle="bold" />

@@ -1,4 +1,4 @@
-package com.example.dz2_month5
+package com.example.dz2_month5.ui.calculate
 
 import android.os.Bundle
 import android.util.Log
@@ -6,20 +6,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.dz2_month5.Pref
+import com.example.dz2_month5.R
+import com.example.dz2_month5.viewModel.LoveViewModel
 import com.example.dz2_month5.databinding.FragmentFirstBinding
-import com.example.dz2_month5.remote.LoveModel
-import com.example.dz2_month5.remote.LoveService
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
     private val viewModel: LoveViewModel by viewModels()
+    private lateinit var pref:Pref
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +31,12 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        pref = Pref(requireContext())
         initListener()
+        if (!pref.isUserSeen()){
+            findNavController().navigate(R.id.startFragment)
+        }
+
     }
 
     private fun initListener() {

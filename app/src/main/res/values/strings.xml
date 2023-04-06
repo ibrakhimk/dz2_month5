@@ -14,4 +14,8 @@
     <string name="_100">100</string>
     <string name="result">result</string>
     <string name="try_again">Try Again</string>
+    <string name="it_s_funs_and_many_more">It\'s Funs and Many more</string>
+    <string name="get_started">Get Started</string>
+    <string name="have_a_good_time">Have a good time</string>
+    <string name="you_should_take_the_time_to_help_those">You should take the time to help those</string>
 </resources>

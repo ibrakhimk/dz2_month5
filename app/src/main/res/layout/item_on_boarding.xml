@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_gravity="center"
+        android:background="@color/teal_700"
+        android:id="@+id/iv_board"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="45dp"/>
+    <TextView
+        android:id="@+id/tv_header"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:layout_gravity="center"
+        android:text="@string/have_a_good_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_header_two"
+        android:text="@string/you_should_take_the_time_to_help_those"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_header_three"
+        android:text="who need you"
+        android:padding="16dp"
+        android:layout_gravity="center"
+        android:textSize="16dp"
+        android:textColor="@android:color/background_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:backgroundTint="@color/blue"
+        android:layout_gravity="center"
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="start"
+        android:visibility="gone"/>
+</LinearLayout>
