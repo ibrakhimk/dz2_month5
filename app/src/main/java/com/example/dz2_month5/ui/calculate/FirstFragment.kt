@@ -1,5 +1,6 @@
 package com.example.dz2_month5.ui.calculate
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,13 +14,17 @@ import com.example.dz2_month5.R
 import com.example.dz2_month5.viewModel.LoveViewModel
 import com.example.dz2_month5.databinding.FragmentFirstBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
     private val viewModel: LoveViewModel by viewModels()
-    private lateinit var pref:Pref
+    private lateinit var pref: Pref
+
+    @Inject
+    lateinit var preferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,12 +36,21 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        pref = Pref(requireContext())
-        initListener()
-        if (!pref.isUserSeen()){
-            findNavController().navigate(R.id.startFragment)
+        if (!viewModel.isUserSeen()){
+            findNavController().navigate(R.id.onBoardFragment)
         }
 
+        pref = Pref(requireContext())
+        initListener()
+        prefer()
+
+        if (!pref.isUserSeen()) {
+            findNavController().navigate(R.id.startFragment)
+        }
+    }
+
+    private fun prefer() {
+        preferences.edit().putBoolean("isShow", true)
     }
 
     private fun initListener() {

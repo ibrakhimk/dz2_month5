@@ -20,22 +20,10 @@ class AppModel {
      ).build().create(LoveApi::class.java)
     }
     @Provides
-    fun Pref(context: Context):SharedPreferences {
-        val pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
-
-        fun isUserSeen(): Boolean {
-            return pref.getBoolean(SEEN_KEY, false)
-        }
-
-        fun saveUserSeen() {
-            pref.edit().putBoolean(SEEN_KEY, true).apply()
-        }
+    fun providePreference(context: Context):SharedPreferences{
         return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
-
-
     }
     companion object {
-        const val PREF_NAME = "pref.task"
-        const val SEEN_KEY = "seen.key"
+        const val PREF_NAME = "PREF"
     }
 }

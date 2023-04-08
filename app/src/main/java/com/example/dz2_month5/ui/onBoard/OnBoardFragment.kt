@@ -37,8 +37,8 @@ class OnBoardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         pref = Pref(requireContext())
         val adapter = OnBoardingAdapter(){
-            pref.saveUserSeen()
-            findNavController().navigate(OnBoardFragmentDirections.actionOnBoardFragmentToFirstFragment())
+            viewModel.userSeen()
+//            pref.saveUserSeen()
             findNavController().navigate(OnBoardFragmentDirections.actionOnBoardFragmentToFirstFragment())
         }
         binding.viewPager.adapter = adapter
